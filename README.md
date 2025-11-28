@@ -13,11 +13,11 @@ Proje, ölçeklenebilirlik ve test edilebilirlik için **Clean Architecture** pr
 ---
 
 ## 📱 Ekran Görüntüleri
-<img width="1206" height="2622" alt="Image" src="https://github.com/user-attachments/assets/7341ffa3-8ac6-48a3-bee0-17a863c9f4bc" />
+<img width="120" height="262" alt="Image" src="https://github.com/user-attachments/assets/7341ffa3-8ac6-48a3-bee0-17a863c9f4bc" />
 
-<img width="1206" height="2622" alt="Image" src="https://github.com/user-attachments/assets/b02666f8-fdb3-4644-8f02-8262a1bcf905" />
+<img width="120" height="262" alt="Image" src="https://github.com/user-attachments/assets/b02666f8-fdb3-4644-8f02-8262a1bcf905" />
 
-<img width="1206" height="2622" alt="Image" src="https://github.com/user-attachments/assets/8bb73cb4-5d59-416a-9638-62df5d944b81" />
+<img width="120" height="262" alt="Image" src="https://github.com/user-attachments/assets/8bb73cb4-5d59-416a-9638-62df5d944b81" />
 ---
 
 ## ✨ Özellikler
