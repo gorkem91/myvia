@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'auth_controller.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
@@ -24,37 +25,35 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   Widget build(BuildContext context) {
     final authState = ref.watch(authControllerProvider);
 
-    
-    ref.listen(authControllerProvider, (previous, next) {
+    ref.listen<AsyncValue<User?>>(authControllerProvider, (previous, next) {
       if (next.hasError) {
         String errorMessage = next.error.toString();
-        if (errorMessage.contains(']')) {
-          errorMessage = errorMessage.split(']').last.trim();
+        if (next.error is FirebaseAuthException) {
+          errorMessage = (next.error as FirebaseAuthException).message ?? "An unknown error occurred";
         }
-
+        
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(
-              "HATA: $errorMessage",
-              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-            ),
-            backgroundColor: Colors.red, 
-            duration: const Duration(seconds: 4),
+            content: Text(errorMessage, style: const TextStyle(color: Colors.white)),
+            backgroundColor: Colors.red,
           ),
+        );
+      } else if (next.value != null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Login Successful!'), backgroundColor: Colors.green),
         );
       }
     });
-    // -------------------------------------
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Giriş Yap')),
+      appBar: AppBar(title: const Text('Login')),
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.security, size: 80, color: Colors.deepPurple),
+              const Icon(Icons.lock_open, size: 80, color: Colors.deepPurple),
               const SizedBox(height: 32),
               TextField(
                 controller: emailController,
@@ -69,9 +68,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               TextField(
                 controller: passwordController,
                 decoration: const InputDecoration(
-                  labelText: 'Şifre',
+                  labelText: 'Password',
                   border: OutlineInputBorder(),
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: Icon(Icons.key),
                 ),
                 obscureText: true,
               ),
@@ -83,7 +82,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   onPressed: authState.isLoading
                       ? null
                       : () {
-                          // Controller'ı tetikle
                           ref.read(authControllerProvider.notifier).signIn(
                                 emailController.text.trim(),
                                 passwordController.text.trim(),
@@ -95,7 +93,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   ),
                   child: authState.isLoading
                       ? const CircularProgressIndicator(color: Colors.white)
-                      : const Text('Giriş Yap', style: TextStyle(fontSize: 16)),
+                      : const Text('Login', style: TextStyle(fontSize: 16)),
                 ),
               ),
             ],
