@@ -12,11 +12,11 @@
 ## 📱 Screenshots (Ekran Görüntüleri)
 
 
-<img width="170" height="300" alt="Image" src="https://github.com/user-attachments/assets/7341ffa3-8ac6-48a3-bee0-17a863c9f4bc" />
+<img width="170" height="315" alt="Image" src="https://github.com/user-attachments/assets/7341ffa3-8ac6-48a3-bee0-17a863c9f4bc" />
 
-<img width="170" height="300" alt="Image" src="https://github.com/user-attachments/assets/b02666f8-fdb3-4644-8f02-8262a1bcf905" />
+<img width="170" height="315" alt="Image" src="https://github.com/user-attachments/assets/b02666f8-fdb3-4644-8f02-8262a1bcf905" />
 
-<img width="170" height="300" alt="Image" src="https://github.com/user-attachments/assets/8bb73cb4-5d59-416a-9638-62df5d944b81" />
+<img width="170" height="315" alt="Image" src="https://github.com/user-attachments/assets/8bb73cb4-5d59-416a-9638-62df5d944b81" />
 ---
 
 ## ✨ Features Highlight
