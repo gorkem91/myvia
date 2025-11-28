@@ -13,6 +13,9 @@ dependencies:
   flutter_markdown: ^0.6.14
   google_generative_ai: ^0.4.4  # Kralların paketi geri geldi
   flutter_riverpod: ^3.0.3
+  firebase_core: ^4.2.1
+  firebase_auth: ^6.1.2
+  state_notifier: ^1.0.0
 
 dev_dependencies:
   flutter_test:
