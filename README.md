@@ -9,7 +9,7 @@
 
 ---
 
-## 📱 Screenshots (Ekran Görüntüleri)
+## 📱 Screenshots 
 
 
 <img width="170" height="320" alt="Image" src="https://github.com/user-attachments/assets/7341ffa3-8ac6-48a3-bee0-17a863c9f4bc" />
